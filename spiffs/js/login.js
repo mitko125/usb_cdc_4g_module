@@ -8,7 +8,7 @@ var Ajax = {
     post: function(url, data, callback){
         var xhr=new XMLHttpRequest();
         xhr.open('POST', url,true);
-        // 添加http头，发送信息至服务器时内容编码类型
+        // Add http header, content encoding type when sending information to the server
         xhr.setRequestHeader('Content-Type','application/json');
         xhr.onreadystatechange=function(){
             console.log('1: ', xhr.readyState)
@@ -26,18 +26,18 @@ var Ajax = {
 
 function login() {
     var wlanName = document.getElementById('wlanName')
-    console.log('wlan 名称：', wlanName.value)
+    console.log('wlan name:', wlanName.value)
     var model = document.getElementById('model')
-    console.log('安全模式：', model.value)
+    console.log('Safety mode:', model.value)
     var password = document.getElementById('password')
-    console.log('密码：', password.value)
+    console.log('Password:', password.value)
     var select = document.getElementById('select')
-    console.log('wlan 隐身：', select.checked)
+    console.log('wlan invisible:', select.checked)
     var isSelect = 'false'
     if (select.checked) {
         isSelect = 'true'
     }
     Ajax.post(CONSTANT.POST_LOGIN_URL, {ssid: wlanName.value, if_hide_ssid: isSelect, auth_mode: model.value, password: password.value}, function (res) {
-        console.log('基本信息保存：', res)
+        console.log('Basic information saved:', res)
     })
 }

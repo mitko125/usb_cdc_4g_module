@@ -9,7 +9,7 @@ const CONSTANT = {
 
 var Ajax = {
   get: function(url,callback){
-    // XMLHttpRequest对象用于在后台与服务器交换数据
+    // XMLHttpRequest object is used to exchange data with the server in the background
     console.log('456789')
     var xhr=new XMLHttpRequest();
     xhr.open('GET', url,true);
@@ -45,7 +45,7 @@ var Ajax = {
   post: function(url, data, callback){
     var xhr=new XMLHttpRequest();
     xhr.open('POST', url,true);
-    // 添加http头，发送信息至服务器时内容编码类型
+    // Add http header, content encoding type when sending information to the server
     xhr.setRequestHeader('Content-Type','application/json');
     xhr.onreadystatechange=function(){
       console.log('1: ', xhr.readyState)
@@ -77,7 +77,7 @@ function baseSetting() {
 }
 
 function advanceSetting() {
-  console.log('点击高级设置')
+  console.log('Click Advanced Settings')
   var base1 = document.querySelector('.header-title-one')
   base1.style.color = '#888888'
   base1.style.cursor = 'pointer'
@@ -92,29 +92,29 @@ function advanceSetting() {
 
 function baseSave() {
   var wlanName = document.getElementById('wlanName')
-  console.log('wlan 名称：', wlanName.value)
+  console.log('wlan name:', wlanName.value)
   var model = document.getElementById('model')
-  console.log('安全模式：', model.value)
+  console.log('Safety mode:', model.value)
   var password = document.getElementById('password')
-  console.log('密码：', password.value)
+  console.log('Password:', password.value)
   var select = document.getElementById('select')
-  console.log('wlan 隐身：', select.checked)
+  console.log('wlan invisible:', select.checked)
   var isSelect = 'false'
   if (select.checked) {
     isSelect = 'true'
   }
   Ajax.post(CONSTANT.GET_BASE_URL, {ssid: wlanName.value, if_hide_ssid: isSelect, auth_mode: model.value, password: password.value}, function (res) {
-    console.log('基本信息保存：', res)
+    console.log('Basic information saved:', res)
   })
 }
 
 function highSave() {
   var broadband = document.getElementById('broadband')
-  console.log('宽带：', broadband.value)
+  console.log('Broadband:', broadband.value)
   var channel = document.getElementById('channel')
-  console.log('信道：', channel.value)
+  console.log('channel:', channel.value)
   Ajax.post(CONSTANT.GET_HIGH_URL, {bandwidth: broadband.value, channel: channel.value}, function (res) {
-    console.log('高级信息保存：', res)
+    console.log('Advanced information saved:', res)
   })
 }
 
@@ -132,14 +132,14 @@ function menuClick (e) {
 }
 
 function initHash () {
-  console.log('页面第一次加载')
+  console.log('Page first loaded')
 
   var highShow = document.getElementById('highShow')
   highShow.style.display = 'none'
 
   Ajax.get(CONSTANT.GET_BASE_URL, function (res) {
-    console.log('获取基本信息： ', res)
-    res = JSON.parse(res)
+    console.log('Get basic information: ', res)
+    res = JSON. parse(res)
     var wlanName = document.getElementById('wlanName')
     var model = document.getElementById('model')
     var password = document.getElementById('password')
@@ -154,8 +154,8 @@ function initHash () {
     select.checked = res.if_hide_ssid === 'true'
   })
   Ajax.get(CONSTANT.GET_HIGH_URL, function (res) {
-    console.log('获取高级信息', res)
-    res = JSON.parse(res)
+    console.log('Get advanced information', res)
+    res = JSON. parse(res)
     var broadband = document.getElementById('broadband')
     var channel = document.getElementById('channel')
 

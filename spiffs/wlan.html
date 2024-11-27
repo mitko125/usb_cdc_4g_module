@@ -19,75 +19,75 @@
     </div>
     <div class="content-base flex">
         <div class="left-base" id="leftMenu">
-<!--            <div class="left-title">系统菜单</div>-->
+<!-- <div class="left-title">System Menu</div>-->
             <ul>
                 <li>
-                    <a href="index.html">系统状态</a>
+                    <a href="index.html">System Status</a>
                 </li>
 <!--                <li>-->
-<!--                    <a href="">网络设置</a>-->
+<!-- <a href="">Network Settings</a>-->
 <!--                </li>-->
                 <li>
-                    <a href="wlan.html" class="content">WLAN设置</a>
+                    <a href="wlan.html" class="content">WLAN settings</a>
                 </li>
 <!--                <li>-->
-<!--                    <a href="">流量统计</a>-->
+<!-- <a href="">Traffic Statistics</a>-->
 <!--                </li>-->
 <!--                <li>-->
-<!--                    <a href="">系统管理</a>-->
+<!-- <a href="">System Management</a> -->
 <!--                </li>-->
             </ul>
         </div>
         <div class="right-base">
             <div class="page-header">
-                <span class="header-title-one" onclick="baseSetting()">基本设置</span>
+                <span class="header-title-one" onclick="baseSetting()">Basic Settings</span>
                 <span>/</span>
-                <span class="header-title-two" onclick="advanceSetting()">高级设置</span>
+                <span class="header-title-two" onclick="advanceSetting()">Advanced Settings</span>
             </div>
             <div class="page-content" id="baseShow">
-                <div class="page-title">以下您可以对 WLAN 进行基本设置</div>
+                <div class="page-title">Below you can make basic settings for WLAN</div>
                 <div class="page-detail">
                     <div class="line-base">
-                        <span class="title">WLAN 名称:</span>
-                        <input class="content" id="wlanName" placeholder="请输入 WLAN 名称">
+                        <span class="title">WLAN name:</span>
+                        <input class="content" id="wlanName" placeholder="Please enter the WLAN name">
                     </div>
                     <div class="line-base">
-                        <span class="title">安全模式:</span>
-                        <select class="content" id="model" name="chian"><!--下拉列表-->
-                            <option value="OPEN">不加密</option>
+                        <span class="title">Safe Mode:</span>
+                        <select class="content" id="model" name="chian"><!--Drop-down list-->
+                            <option value="OPEN">No encryption</option>
                             <option value="WEP">WEP</option>
                             <option value="WPA2_PSK" selected="selected">WPA2PSK</option>
                             <option value="WPA_WPA2_PSK">WPA/WPA2-PSK</option>
                         </select>
                     </div>
                     <div class="line-base">
-                        <span class="title">密码:</span>
-                        <input class="content" id="password" placeholder="请输入密码">
+                        <span class="title">Password:</span>
+                        <input class="content" id="password" placeholder="Please enter your password">
                     </div>
                     <div class="line-base flex flex-ac">
-                        <span class="title">WLAN 隐身:</span>
+                        <span class="title">WLAN Stealth:</span>
                         <input class="content-two" type="checkbox" id="select" name="sel"/>
-                        <span class="content-thr">WLAN 开启后，需要您必须在终端上输入正确的 WLAN名称才能连接到 WLAN 并且 WLAN WPS 将不可用</span>
+                        <span class="content-thr">After WLAN is turned on, you must enter the correct WLAN name on the terminal to connect to the WLAN and WLAN WPS will not be available</span>
                     </div>
                     <div class="line-base-btn">
-                        <button class="save-btn" onclick="baseSave()">保存</button>
+                        <button class="save-btn" onclick="baseSave()">Save</button>
                     </div>
                 </div>
             </div>
             <div class="page-content" id="highShow">
-                <div class="page-title">您可以对 WLAN 设置以下两项个性化设置</div>
+                <div class="page-title">You can set the following two personalized settings for WLAN</div>
                 <div class="page-detail">
                     <div class="line-base">
-                        <span class="title">宽带:</span>
-                        <select class="content" id="broadband" name="chian"><!--下拉列表-->
+                        <span class="title">Broadband:</span>
+                        <select class="content" id="broadband" name="chian"><!--Drop-down list-->
                             <option value="20" selected="selected">20MHz</option>
                             <option value="40">40MHz</option>
                         </select>
                     </div>
                     <div class="line-base">
-                        <span class="title">信道:</span>
-                        <select class="content" id="channel" name="chian"><!--下拉列表-->
-<!--                            <option value="0" selected="selected">自动</option>-->
+                        <span class="title">Channel:</span>
+                        <select class="content" id="channel" name="chian"><!--Drop-down list-->
+<!--                            <option value="0" selected="selected">automatic</option>-->
                             <option value="1" selected="selected">1</option>
                             <option value="2" >2</option>
                             <option value="3">3</option>
@@ -104,7 +104,7 @@
                         </select>
                     </div>
                     <div class="line-base-btn">
-                        <button class="save-btn" onclick="highSave()">保存</button>
+                        <button class="save-btn" onclick="highSave()">Save</button>
                     </div>
                 </div>
             </div>

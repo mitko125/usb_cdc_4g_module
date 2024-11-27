@@ -13,7 +13,7 @@ var per = []
 
 var Ajax = {
     get: function(url,callback){
-        // XMLHttpRequest对象用于在后台与服务器交换数据
+        // XMLHttpRequest object is used to exchange data with the server in the background
         console.log('4567890')
         var xhr = new XMLHttpRequest();
         xhr.open('GET', url,false);
@@ -50,7 +50,7 @@ var Ajax = {
     post: function(url, data, callback){
         var xhr=new XMLHttpRequest();
         xhr.open('POST', url,true);
-        // 添加http头，发送信息至服务器时内容编码类型
+        // Add http header, content encoding type when sending information to the server
         xhr.setRequestHeader('Content-Type','application/json');
         xhr.onreadystatechange=function(){
             if (xhr.readyState === 4){
@@ -79,7 +79,7 @@ function networkStatus() {
 }
 
 function customerList() {
-    console.log('点击客户端列表')
+    console.log('Click on the client list')
     var base1 = document.querySelector('.header-title-one')
     base1.style.color = '#888888'
     base1.style.cursor = 'pointer'
@@ -104,21 +104,21 @@ function deviceStatusUpdate (nowTime, list) {
     var s = Math.floor((online_time % 60));
 
     console.log('list: ', list)
-    connectTime.innerHTML = h +'小时'+ m +'分钟'+ s +'秒'
-    remainCount.innerHTML = 10 - list.length + '台'
-    connectCount.innerHTML = list.length + '台'
+    connectTime.innerHTML = h + 'h' + m + 'm' + s + 's'
+    remainCount.innerHTML = 10 - list.length + 'pcs'
+    connectCount.innerHTML = list.length + 'pcs'
 
 }
 
 function createList (list) {
     var html = []
     var tbody = document.getElementById('tbody')
-    for(var i = 0;i < list.length; i++){ //遍历一下json数据
+    for(var i = 0;i < list.length; i++){ //Traverse the json data
         console.log('name: ', list[i].name_str)
         console.log('mac: ', list[i].mac_str)
         console.log('ip:', list[i].ip_str)
         //<td><div data-mac="${list[i].mac_str}" data-value="${list[i].isNetwork}" class="switch-wrap"></div></td>
-        var tr = `<tr><td><input value="${list[i].name_str}" disabled class="list-name" data-index="${i}" id="row + ${i}" /></td><td>${list[i].mac_str}</td><td>${list[i].ip_str}</td><td>${list[i].connectTime}</td><td><div class="flex flex-jcc"><input class="edit-btn" type="button" id="edit + ${i}" data-id="row + ${i}" value="编辑" /><div class="edit-line"></div><input class="del-btn" type="button" data-index="${i}" id="dle + ${i}" value="删除"/></div></td></tr>`
+        var tr = `<tr><td><input value="${list[i].name_str}" disabled class="list-name" data-index="${i}" id="row + ${i}" /></td><td>${list[i].mac_str}</td><td>${list[i].ip_str}</td><td>${list[i].connectTime}</td><td><div class="flex flex-jcc"><input class="edit-btn" type="button" id="edit + ${i}" data-id="row + ${i}" value="edit" /><div class="edit-line"></div><input class="del-btn" type="button" data-index="${i}" id="dle + ${i}" value="delete"/></div></td></tr>`
         html.push(tr)
     }
     tbody.innerHTML = html.join('')
@@ -146,9 +146,9 @@ function editNameUpdate (index, value) {
 function updateRouterList () {
     getListTime = setTimeout(updateRouterList,4000)
     Ajax.get(CONSTANT.GET_STATION_URL, function (res) {
-        res = JSON.parse(res)
-        console.log('获取基本信息： ', res)
-        console.log('获取基本信息： ', res.station_list)
+        res = JSON. parse(res)
+        console.log('Get basic information: ', res)
+        console.log('Get basic information: ', res.station_list)
         per = res.station_list
         deviceStatusUpdate(res.now_time, res.station_list)
         for (var i = 0; i < per.length; i++) {
@@ -157,11 +157,11 @@ function updateRouterList () {
             var h = Math.floor(online_time / 3600 )
             var m = Math.floor((online_time /60 % 60))
             var s = Math.floor((online_time % 60))
-            let connectTime = h + '小时' + m + '分钟' + s + '秒'
+            let connectTime = h + 'h' + m + 'm' + s + 's'
             stationDic['connectTime'] = connectTime
             per.splice(i, 1, stationDic)
         }
-        console.log('页面上要显示的信息： ', per)
+        console.log('Information to be displayed on the page: ', per)
 
         createList(per)
     })
@@ -181,7 +181,7 @@ function menuClick (e) {
 }
 
 function initHash () {
-    console.log('页面第一次加载')
+    console.log('Page first loaded')
 
     var highShow = document.getElementById('customerShow')
     highShow.style.display = 'none'
@@ -205,16 +205,16 @@ function initHash () {
             var editBtn = document.getElementById(inputId)
             var listName = document.getElementById(inputDataId)
             // var listName = document.getElementById('list-name-id')
-            if (editBtn.value === '编辑') {
+            if (editBtn.value === 'Edit') {
                 console.log('editBtn bianji')
                 listName.disabled = ''
                 listName.style.border = '1px solid #CCCCCC'
-                editBtn.value = '确认'
+                editBtn.value = 'Confirm'
             } else {
                 console.log('editBtn queren')
                 listName.disabled = 'disabled'
                 listName.style.border = '0'
-                editBtn.value = '编辑'
+                editBtn.value = 'Edit'
                 console.log('listName: ' + listName.value)
                 console.log('listName: ' + listName.getAttribute('data-index'))
                 editNameUpdate(listName.getAttribute('data-index'), listName.value)
@@ -224,14 +224,14 @@ function initHash () {
 
         if (e.target.className === 'del-btn') {
             clearInterval(getListTime)
-            console.log('删除')
+            console.log('delete')
             var deleteId = e.target.getAttribute('id')
             var deleteBtn = document.getElementById(deleteId)
             var target = e.target
             console.log(target.parentNode.parentNode.parentNode)
             console.log('delete index: ' + deleteBtn.getAttribute('data-index'))
 
-            var msg = '您确定要删除这条数据吗？'
+            var msg = 'Are you sure you want to delete this data? '
             if (confirm(msg) === true) {
                 if (e.target.className === 'del-btn') {
                     tbody.removeChild(target.parentNode.parentNode.parentNode)
@@ -239,7 +239,7 @@ function initHash () {
                 }
                 updateRouterList()
             } else {
-                console.log('取消删除数据')
+                console.log('Cancel deletion of data')
                 updateRouterList()
             }
         }

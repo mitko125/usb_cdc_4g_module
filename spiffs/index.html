@@ -18,125 +18,125 @@
     </div>
     <div class="content-base flex">
       <div class="left-base" id="leftMenu">
-<!--        <div class="left-title">系统菜单</div>-->
+<!-- <div class="left-title">System Menu</div>-->
         <ul>
           <li>
-            <a href="index.html" class="content">系统状态</a>
+            <a href="index.html" class="content">System Status</a>
           </li>
 <!--          <li>-->
-<!--            <a href="">网络设置</a>-->
+<!-- <a href="">Network Settings</a>-->
 <!--          </li>-->
           <li>
-            <a href="wlan.html">WLAN设置</a>
+            <a href="wlan.html">WLAN Settings</a>
           </li>
 <!--          <li>-->
-<!--            <a href="">流量统计</a>-->
+<!-- <a href="">Traffic Statistics</a>-->
 <!--          </li>-->
 <!--          <li>-->
-<!--            <a href="">系统管理</a>-->
+<!-- <a href="">System Management</a> -->
 <!--          </li>-->
         </ul>
       </div>
       <div class="right-base">
         <div class="page-header">
-          <span class="header-title-one" onclick="networkStatus()">网络状态</span>
+          <span class="header-title-one" onclick="networkStatus()">Network Status</span>
           <span>/</span>
-          <span class="header-title-two" onclick="customerList()">客户端列表</span>
+          <span class="header-title-two" onclick="customerList()">Client List</span>
         </div>
         <div class="page-content" id="networkShow">
-          <div class="page-title">基本状态</div>
+          <div class="page-title">Basic state</div>
           <div class="base-detail flex">
             <div class="base-one flex flex-v">
               <img src="./img/xinhao.png">
-              <span>因特网</span>
+              <span>Internet</span>
             </div>
             <div class="base-two">
               <div class="base-line-text flex flex-jcc">
-<!--                <span>勾</span>-->
-                <span>移动数据正常</span>
+<!--                <span>hook</span>-->
+                <span>Mobile data is normal</span>
               </div>
               <div class="base-line"></div>
             </div>
             <div class="base-three flex flex-v">
               <img src="./img/luyouqi.png">
-              <span>我的设备</span>
+              <span>My Devices</span>
             </div>
             <div class="base-two">
               <div class="base-line-text flex flex-jcc">
-<!--                <span>勾</span>-->
-                <span>2.4 GHz Wi-Fi 正常</span>
+<!--                <span>hook</span>-->
+                <span>2.4 GHz Wi-Fi normal</span>
               </div>
               <div class="base-line"></div>
             </div>
             <div class="base-five flex flex-v">
               <img src="./img/shebei.png">
-              <span>客户端数量</span>
+              <span>Number of clients</span>
             </div>
           </div>
-          <div class="page-title">设备状态</div>
+          <div class="page-title">Device Status</div>
           <div class="device-detail">
               <div class="device-status-two flex flex-jcb">
                   <div class="device-battery">
-                      <span>连续持续时间</span>
+                      <span>Continuous duration</span>
                       <span class="device-content" id="connect-time">xxx</span>
                   </div>
                   <div class="device-connect-count">
-                      <span>剩余连接数</span>
-                      <span class="device-content" id="remain-count">x台</span>
+                      <span>Number of remaining connections</span>
+                      <span class="device-content" id="remain-count">x pcs</span>
                   </div>
               </div>
               <div class="device-status-one flex flex-jcb">
 <!--                  <div class="device-battery">-->
-<!--                      <span>电量情况</span>-->
+<!-- <span>Battery Status</span>-->
 <!--                      <span class="device-content">95%</span>-->
 <!--                  </div>-->
                   <div class="device-connect-count">
-                      <span>已连接数</span>
-                      <span class="device-content" id="connect-count">x台</span>
+                      <span>Number of connections</span>
+                      <span class="device-content" id="connect-count">x pcs</span>
                   </div>
               </div>
           </div>
-<!--          <div class="page-title">实时网络状态</div>-->
+<!-- <div class="page-title">Real-time network status</div>-->
 <!--          <div class="network-detail">-->
 <!--            <div class="device-status-one  flex flex-jcb">-->
 <!--              <div class="device-battery">-->
-<!--                <span>当前下载</span>-->
+<!-- <span>Current Downloads</span>-->
 <!--                <span class="device-content">xxx</span>-->
 <!--              </div>-->
 <!--              <div class="device-connect-count">-->
-<!--                <span>最快下载</span>-->
+<!-- <span>Fastest Download</span>-->
 <!--                <span class="device-content">xxx</span>-->
 <!--              </div>-->
 <!--            </div>-->
 <!--            <div class="device-status-two  flex flex-jcb">-->
 <!--              <div class="device-battery">-->
-<!--                <span>总上传量</span>-->
+<!-- <span>Total uploads</span>-->
 <!--                <span class="device-content">xxx</span>-->
 <!--              </div>-->
 <!--              <div class="device-connect-count">-->
-<!--                <span>平均下载</span>-->
+<!-- <span>Average Downloads</span>-->
 <!--                <span class="device-content">xxx</span>-->
 <!--              </div>-->
 <!--            </div>-->
 <!--            <div class="device-status-three  flex flex-jcb">-->
 <!--              <div class="device-battery">-->
-<!--                <span>总下载量</span>-->
+<!-- <span>Total downloads</span>-->
 <!--                <span class="device-content">xxx</span>-->
 <!--              </div>-->
 <!--            </div>-->
 <!--          </div>-->
         </div>
         <div class="page-content" id="customerShow">
-          <div class="page-title">在线客户端</div>
+          <div class="page-title">Online Client</div>
           <div class="page-detail">
             <table class="tableStyle tCenter">
                 <thead>
                     <tr>
-                        <th>主机名</th>
-                        <th>MAC 地址</th>
-                        <th>IP 地址</th>
-                        <th>连接时间</th>
-                        <th>操作</th>
+                        <th>Host Name</th>
+                        <th>MAC address</th>
+                        <th>IP address</th>
+                        <th>Connection time</th>
+                        <th>Operation</th>
                     </tr>
                 </thead>
                 <tbody id="tbody"></tbody>
