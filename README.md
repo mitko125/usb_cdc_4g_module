@@ -1,3 +1,5 @@
+# Изтелено на 2024.11.27, пример от [компонента](https://components.espressif.com/components/espressif/iot_usbh_modem/versions/0.2.1)
+
 * [中文版本](README_cn.md)
 
 # USB CDC 4G Module
