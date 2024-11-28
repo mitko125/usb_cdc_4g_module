@@ -22,6 +22,21 @@
 #include "led_indicator_blink_default.h"
 #include "usbh_modem_board.h"
 #include "usbh_modem_wifi.h"
+
+
+// Тръгва и без модем (за проба на WiFi сайта), но при модем не го статира добре - иска проби
+// #undef CONFIG_EXAMPLE_ENTER_PPP_DURING_INIT
+// забранява пингването
+// #undef CONFIG_EXAMPLE_PING_NETWORK
+// пингването не е на 8.8.8.8 а на адреса на DNS сървъра на модема
+// #undef CONFIG_EXAMPLE_PING_MANUAL_ADDR
+// забранява автоматичното намиране на IP то на DNS сървъра на модема
+// #undef CONFIG_EXAMPLE_AUTO_UPDATE_DNS
+// дава статус на тасковете
+// #define CONFIG_DUMP_SYSTEM_STATUS 1
+
+
+
 #ifdef CONFIG_EXAMPLE_ENABLE_WEB_ROUTER
 #include "modem_http_config.h"
 #endif
