@@ -1,5 +1,11 @@
 # Изтелено на 2024.11.27, пример от [компонента](https://components.espressif.com/components/espressif/iot_usbh_modem/versions/0.2.1)
 
+- [x] Връзка на ESP32-S3 по WiFi и GPRS с модем A7672E;
+- [x] Сайта е преведен от Китайски на Английски;
+- [x] Добавени #def/undef за да не си играем с Config;
+
+## Следва оригинала
+
 * [中文版本](README_cn.md)
 
 # USB CDC 4G Module
